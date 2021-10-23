@@ -29,11 +29,15 @@ export default function Home(){
 
         fetch('http://18.218.153.19:3333/asset/inserisci',{
             method:'POST',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "text/plain"
+            },
             body:calcia,
         })
         .then((ris)=> ris.json)
         .then((results)=> console.log(results))
-        
+
        client.emit('vaffanculo')
         client.emit('asset nuovo', (calc))
 
