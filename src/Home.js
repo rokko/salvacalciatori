@@ -25,7 +25,7 @@ export default function Home(){
         const calcia = JSON.stringify(calc)
         console.log(calcia)
 
-        axios.post('https://registracalciatori.herokuapp.com/inserisci',{calcia})
+        axios.post('https://cors-anywhere.herokuapp.com/https://registracalciatori.herokuapp.com/inserisci',{calcia})
         .then((results)=> console.log(results))
 
         axios.get('https://registracalciatori.herokuapp.com/')
