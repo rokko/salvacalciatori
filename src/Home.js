@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-
+import axios from 'axios'
 
 export default function Home(){
     const [nome, setNome] = useState()
@@ -25,15 +25,7 @@ export default function Home(){
         const calcia = JSON.stringify(calc)
         console.log(calcia)
 
-        fetch('http://18.218.153.19:3333/asset/inserisci',{
-            method:'POST',
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json"
-            },
-            body:calcia,
-        })
-        .then((ris)=> ris.json)
+        axios.post('http://18.218.153.19:3333/asset/inserisci',{calcia})
         .then((results)=> console.log(results))
 
        
