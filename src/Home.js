@@ -31,7 +31,7 @@ export default function Home(){
             method:'POST',
             headers: {
                 "Access-Control-Allow-Origin": "*",
-                "Content-Type": "text/plain"
+                "Content-Type": "application/json"
             },
             body:calcia,
         })
