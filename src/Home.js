@@ -14,6 +14,8 @@ export default function Home(){
 
 
     const salvaCalciatore = () => {
+
+        
         const calc ={
             nome:nome,
             logo:logo,
@@ -22,6 +24,16 @@ export default function Home(){
             stelle:rarita,
             posizione:posizione,
         }
+        const calcia = JSON.stringify(calc)
+        console.log(calcia)
+
+        fetch('http://18.218.153.19:3333/asset/inserisci',{
+            method:'POST',
+            body:calcia,
+        })
+        .then((ris)=> ris.json)
+        .then((results)=> console.log(results))
+        
        client.emit('vaffanculo')
         client.emit('asset nuovo', (calc))
 
