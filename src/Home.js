@@ -1,5 +1,4 @@
 import React , {useState} from 'react'
-import socketIOClient from 'socket.io-client'
 
 
 export default function Home(){
@@ -10,7 +9,6 @@ export default function Home(){
     const [rarita, setRarita] = useState()
     const [posizione, setPosizione] = useState()
 
-    const client =  socketIOClient('http://18.218.153.19:3333/asset',{secure: true})
 
 
     const salvaCalciatore = () => {
@@ -38,8 +36,7 @@ export default function Home(){
         .then((ris)=> ris.json)
         .then((results)=> console.log(results))
 
-       client.emit('vaffanculo')
-        client.emit('asset nuovo', (calc))
+       
 
     }
 
