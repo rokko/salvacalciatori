@@ -28,6 +28,9 @@ export default function Home(){
         axios.post('https://registracalciatori.herokuapp.com/inserisci',{calcia})
         .then((results)=> console.log(results))
 
+        axios.get('https://registracalciatori.herokuapp.com/')
+        .then((results)=> console.log(results))
+
        
 
     }
